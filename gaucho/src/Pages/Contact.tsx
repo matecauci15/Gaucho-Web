@@ -106,7 +106,7 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-100 py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#1A1A1A', color: '#FFFFFF' }}>
+    <div className="min-h-screen bg-[#2c2c2b] text-gray-100 py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#1A1A1A', color: '#FFFFFF' }}>
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 mt-10">
           <h1 className="text-4xl font-bold mb-4 relative inline-block" style={{ color: '#80A8D6' }}>
@@ -120,7 +120,7 @@ export const Contact: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Formulario de contacto */}
-          <div className="bg-gray-900 rounded-lg shadow-lg p-8 md:p-10 relative border border-gray-800" style={{ backgroundColor: '#1A1A1A', borderColor: 'rgba(128, 168, 214, 0.2)' }}>
+          <div className="bg-[#2c2c2b]rounded-lg shadow-lg p-8 md:p-10 relative border border-gray-800" style={{ backgroundColor: '#1A1A1A', borderColor: 'rgba(128, 168, 214, 0.2)' }}>
             {/* Línea superior decorativa */}
             <div className="absolute top-0 left-0 w-full h-1" style={{ backgroundColor: '#F2BF5D' }}></div>
             
@@ -363,7 +363,7 @@ export const Contact: React.FC = () => {
             {/* Información de Contacto */}
             <div className="bg-gray-900 rounded-lg shadow-lg p-8 relative border border-gray-800" style={{ backgroundColor: '#1A1A1A', borderColor: 'rgba(128, 168, 214, 0.2)' }}>
               <h2 className="text-2xl font-bold mb-8 flex items-center" style={{ color: '#80A8D6' }}>
-                Estamos aquí para ti
+                Estamos aca para vos
                 <div className="h-px flex-grow ml-4 rounded-full" style={{ backgroundColor: '#F2BF5D' }}></div>
               </h2>
               

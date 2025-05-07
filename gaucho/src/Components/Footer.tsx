@@ -1,4 +1,4 @@
-
+// footer.tsx
 import { useState, useEffect } from "react";
 import { Phone, Mail, MapPin, Facebook, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -182,14 +182,14 @@ export const Footer = () => {
               <div className="flex flex-col items-start space-y-4">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 border-2 border-[#F2BF5D] rounded-md flex items-center justify-center">
-                    <Mail size={16} className="text-white" />
+                    <Mail size={22} className="text-white" />
                   </div>
                   <span>info@gaucholab.com</span>
                 </div>
                 
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 border-2 border-[#F2BF5D] rounded-md flex items-center justify-center">
-                    <MapPin size={16} className="text-white" />
+                    <MapPin size={22} className="text-white" />
                   </div>
                   <div>
                     <div>España 810</div>
