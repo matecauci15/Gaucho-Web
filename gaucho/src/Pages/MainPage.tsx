@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { TechBanner } from '../Components/TechBanner.tsx';
 import { About } from './About.tsx';
-import { HomePage } from './HomePage.tsx';
-import { TechnologiesSection } from '../Components/TechnologiesSection.tsx';
+// import { HomePage } from './HomePage.tsx';
+// import { TechnologiesSection } from '../Components/TechnologiesSection.tsx';
 import { ProjectsPage } from './Projects.tsx';
-import { BlogSection } from '../Components/Blog.tsx/BlogSection.tsx';
+// import { BlogSection } from '../Components/Blog.tsx/BlogSection.tsx';
 import { Contact } from './Contact.tsx';
 
 export const MainPage: React.FC = () => {
@@ -38,18 +38,18 @@ export const MainPage: React.FC = () => {
       <section id="about">
         <About />
       </section>
-      <section id="home">
+      {/* <section id="home">
         <HomePage />
       </section>
       <section id="technologies">
         <TechnologiesSection />
-      </section>
+      </section> */}
       <section id="projects">
         <ProjectsPage />
       </section>
-      <section id="blog">
+      {/* <section id="blog">
         <BlogSection />
-      </section>
+      </section> */}
       <section id="contact">
         <Contact />
       </section>

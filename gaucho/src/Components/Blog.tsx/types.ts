@@ -1,5 +1,5 @@
 //types/ts
-export type TabType = 'Tendencias' | 'Casos de Éxito' | 'Noticias' | 'Tips y Buenas Prácticas';
+export type TabType = 'Tendencias' | 'Noticias' | 'Tips y Buenas Prácticas';
 
 export interface BlogPost {
   id: string;

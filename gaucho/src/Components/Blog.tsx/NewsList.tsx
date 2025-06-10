@@ -18,20 +18,20 @@ interface NewsProps {
 
 export const NewsList: React.FC<NewsProps> = ({ 
   title, 
-  viewAllText = "Ver todas", 
-  viewAllLink = "#",
+
+  // viewAllLink = "#",
   items 
 }) => {
   return (
     <div className="rounded-xl bg-white shadow-lg border border-gray-200 p-6">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-lg font-bold text-gray-800">{title}</h3>
-        <Link 
+        {/* <Link 
           to={viewAllLink}
           className="text-[#80A8D6] text-sm hover:text-[#F8BC47] transition-colors duration-300"
         >
           {viewAllText}
-        </Link>
+        </Link> */}
       </div>
       
       <div className="space-y-4">

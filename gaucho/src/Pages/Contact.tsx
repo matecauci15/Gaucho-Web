@@ -1,9 +1,8 @@
-
 import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { Send, CheckCircle, AlertCircle, Loader2, User, Mail, MessageSquare, MapPin, Phone, Clock, Instagram, Facebook, Twitter } from 'lucide-react';
+import { Send, CheckCircle, AlertCircle, Loader2, User, Mail, MessageSquare, MapPin, Phone, Clock, Instagram, Facebook, Linkedin } from 'lucide-react';
 
 const schema = yup.object({
   name: yup.string()
@@ -28,6 +27,7 @@ export const Contact: React.FC = () => {
   const [focusedField, setFocusedField] = useState<keyof FormData | null>(null);
   const [timeoutId, setTimeoutId] = useState<ReturnType<typeof setTimeout> | null>(null);
   const [characterCount, setCharacterCount] = useState({ message: 0 });
+  const [errorMessage, setErrorMessage] = useState<string>('');
 
   const {
     register,
@@ -57,34 +57,61 @@ export const Contact: React.FC = () => {
     };
   }, [timeoutId]);
 
-  // Mock submission con mejor manejo de errores
+  // Función para enviar el formulario al backend
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
+    setErrorMessage('');
+    
     try {
-      // Simulate API call
-      await new Promise((resolve, reject) => {
-        // Simular éxito con 95% de probabilidad, error con 5%
-        const shouldSucceed = Math.random() < 0.95;
-        setTimeout(() => {
-          if (shouldSucceed) {
-            resolve(data);
-          } else {
-            reject(new Error('Network error'));
-          }
-        }, 1500);
+      // URL del servidor - ajusta según tu configuración
+      // const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001';
+      const API_URL = 'http://localhost:3001';
+      
+      const response = await fetch(`${API_URL}/api/contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
       });
-      
-      console.log('Form submitted:', data);
-      setSubmitStatus('success');
-      reset();
-      
-      const id = setTimeout(() => setSubmitStatus('idle'), 5000);
-      setTimeoutId(id);
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.message || 'Error al enviar el mensaje');
+      }
+
+      if (result.success) {
+        console.log('Form submitted successfully:', data);
+        setSubmitStatus('success');
+        reset();
+        
+        const id = setTimeout(() => setSubmitStatus('idle'), 5000);
+        setTimeoutId(id);
+      } else {
+        throw new Error(result.message || 'Error desconocido');
+      }
     } catch (error) {
       console.error('Error submitting form:', error);
       setSubmitStatus('error');
       
-      const id = setTimeout(() => setSubmitStatus('idle'), 5000);
+      // Configurar mensaje de error específico
+      if (error instanceof Error) {
+        if (error.message.includes('RATE_LIMIT_EXCEEDED')) {
+          setErrorMessage('Has enviado demasiados mensajes. Intenta nuevamente en una hora.');
+        } else if (error.message.includes('Failed to fetch')) {
+          setErrorMessage('No se pudo conectar con el servidor. Verifica tu conexión a internet.');
+        } else {
+          setErrorMessage(error.message);
+        }
+      } else {
+        setErrorMessage('Error inesperado. Por favor, intenta nuevamente.');
+      }
+      
+      const id = setTimeout(() => {
+        setSubmitStatus('idle');
+        setErrorMessage('');
+      }, 8000);
       setTimeoutId(id);
     } finally {
       setIsSubmitting(false);
@@ -106,10 +133,12 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#2c2c2b] text-gray-100 py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#1A1A1A', color: '#FFFFFF' }}>
+    <div className="min-h-screen bg-[#2b2b2c] text-gray-100 py-20 px-4 sm:px-6 lg:px-8" style={{ color: '#FFFFFF' }}>
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 mt-10">
-          <h1 className="text-4xl font-bold mb-4 relative inline-block" style={{ color: '#80A8D6' }}>
+          <h1 className="text-4xl font-bold mb-4 relative inline-block uppercase" style={{ 
+            fontFamily: "'JetBrains Mono', monospace",
+            color: 'white' }}>
             Contáctanos
             <span className="absolute -bottom-2 left-0 right-0 h-1 transform" style={{ backgroundColor: '#F2BF5D' }}></span>
           </h1>
@@ -120,9 +149,9 @@ export const Contact: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Formulario de contacto */}
-          <div className="bg-[#2c2c2b]rounded-lg shadow-lg p-8 md:p-10 relative border border-gray-800" style={{ backgroundColor: '#1A1A1A', borderColor: 'rgba(128, 168, 214, 0.2)' }}>
+          <div className="bg-[#2c2c2b] rounded-b-2xl rounded-lg shadow-lg p-8 md:p-10 relative border border-gray-800" style={{ backgroundColor: '#1A1A1A', borderColor: 'rgba(128, 168, 214, 0.2)' }}>
             {/* Línea superior decorativa */}
-            <div className="absolute top-0 left-0 w-full h-1" style={{ backgroundColor: '#F2BF5D' }}></div>
+            <div className="absolute rounded-t-2xl top-0 left-0 w-full h-1" style={{ backgroundColor: '#F2BF5D' }}></div>
             
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 relative">
               {/* Form header */}
@@ -309,7 +338,7 @@ export const Contact: React.FC = () => {
                     <div className="bg-green-900 text-green-300 p-4 rounded-lg flex items-center justify-between border border-green-700">
                       <div className="flex items-center space-x-2">
                         <CheckCircle className="w-5 h-5" />
-                        <span className="font-medium">¡Mensaje enviado con éxito!</span>
+                        <span className="font-medium">¡Mensaje enviado con éxito! Revisa tu email para la confirmación.</span>
                       </div>
                       <button 
                         className="text-green-300 hover:text-green-100 transition-colors duration-300"
@@ -327,11 +356,16 @@ export const Contact: React.FC = () => {
                     <div className="bg-red-900 text-red-300 p-4 rounded-lg flex items-center justify-between border border-red-700">
                       <div className="flex items-center space-x-2">
                         <AlertCircle className="w-5 h-5" />
-                        <span className="font-medium">No se pudo enviar el mensaje. Por favor, inténtalo de nuevo.</span>
+                        <span className="font-medium">
+                          {errorMessage || 'No se pudo enviar el mensaje. Por favor, inténtalo de nuevo.'}
+                        </span>
                       </div>
                       <button 
                         className="text-red-300 hover:text-red-100 transition-colors duration-300"
-                        onClick={() => setSubmitStatus('idle')}
+                        onClick={() => {
+                          setSubmitStatus('idle');
+                          setErrorMessage('');
+                        }}
                       >
                         <span className="sr-only">Cerrar</span>
                         &times;
@@ -385,7 +419,7 @@ export const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-1" style={{ color: '#80A8D6' }}>Email</h3>
-                    <p className="text-gray-300" style={{ color: '#FFFFFF' }}>info@tuempresa.com</p>
+                    <p className="text-gray-300" style={{ color: '#FFFFFF' }}>info@gaucholab.com</p>
                   </div>
                 </div>
                 
@@ -395,7 +429,7 @@ export const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-1" style={{ color: '#80A8D6' }}>Teléfono</h3>
-                    <p className="text-gray-300" style={{ color: '#FFFFFF' }}>+54 341 456 7890</p>
+                    <p className="text-gray-300" style={{ color: '#FFFFFF' }}>+54 9 341 397 7076</p>
                   </div>
                 </div>
                 
@@ -414,14 +448,14 @@ export const Contact: React.FC = () => {
               <div className="mt-8 pt-6 border-t border-gray-700">
                 <h3 className="font-semibold text-lg mb-4" style={{ color: '#80A8D6' }}>Síguenos en redes</h3>
                 <div className="flex space-x-4">
-                  <a href="#" className="bg-gray-800 p-3 rounded-full transition-all duration-300 hover:scale-110" style={{ backgroundColor: '#242424' }}>
+                  <a target='_blank' href="https://www.instagram.com/gaucho_lab?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="bg-gray-800 p-3 rounded-full transition-all duration-300 hover:scale-110" style={{ backgroundColor: '#242424' }}>
                     <Instagram className="w-5 h-5" style={{ color: '#F2BF5D' }} />
                   </a>
-                  <a href="#" className="bg-gray-800 p-3 rounded-full transition-all duration-300 hover:scale-110" style={{ backgroundColor: '#242424' }}>
+                  <a  target='_blank' href="https://www.facebook.com/GauchoLab" className="bg-gray-800 p-3 rounded-full transition-all duration-300 hover:scale-110" style={{ backgroundColor: '#242424' }}>
                     <Facebook className="w-5 h-5" style={{ color: '#F2BF5D' }} />
                   </a>
-                  <a href="#" className="bg-gray-800 p-3 rounded-full transition-all duration-300 hover:scale-110" style={{ backgroundColor: '#242424' }}>
-                    <Twitter className="w-5 h-5" style={{ color: '#F2BF5D' }} />
+                  <a href="https://www.linkedin.com/company/gaucholab/?viewAsMember=true" target='_blank' className="bg-gray-800 p-3 rounded-full transition-all duration-300 hover:scale-110" style={{ backgroundColor: '#242424' }}>
+                    <Linkedin className="w-5 h-5" style={{ color: '#F2BF5D' }} />
                   </a>
                 </div>
               </div>

@@ -361,48 +361,49 @@ import fran from '../assets/fran.jpg';
 import tomi from '../assets/tomi.jpeg';
 import fer from '../assets/fer.jpeg';
 import nacho from '../assets/nachito.jpeg';
+import { Carousel } from '../Components/Carrousel';
 // Datos del equipo con URLs de imágenes de Pexels
 const teamMembers = [
   { 
     name: 'Mateo Caucino', 
-    role: 'Fundador & Desarrollador Principal',
-    expertise: ['Desarrollo Web', 'Integración IA'],
+    role: 'Desarrollador FrontEnd',
+    expertise: ['Desarrollo Web', 'Diseño UI/UX'],
     imageUrl: mate
   },
   { 
     name: 'Agustin Caucino', 
-    role: 'Especialista en Automatización',
-    expertise: ['Automatización', 'IA'],
+    role: 'Desarrollador Backend',
+    expertise: ['Automatización', 'BackeEnd'],
     imageUrl: agus
   },
   { 
     name: 'Francisco Baeck', 
-    role: 'Desarrollador Backend',
-    expertise: ['Microservicios', 'Ciberseguridad'],
+    role: 'Project Manager',
+    expertise: ['Herramientas de Gestión', 'QA'],
     imageUrl: franb
   },
   { 
     name: 'Francisco Caucino', 
-    role: 'Desarrolladora Frontend',
-    expertise: ['React', 'UI/UX'],
+    role: 'Finanza y Administración',
+    expertise: ['Analítico'],
     imageUrl: fran
   },
   { 
     name: 'Tomas Caucino', 
-    role: 'UX/UI Designer',
-    expertise: ['Diseño UX', 'Prototipado'],
+    role: 'Desarrolaldor Backend',
+    expertise: ['Desarrollo Web', 'Backend'],
     imageUrl: tomi
   },
   { 
     name: 'Fernando Darder', 
-    role: 'Project Manager',
-    expertise: ['Agile', 'Gestión de Equipo'],
+    role: 'Desarrollador FrontEnd',
+    expertise: ['Desarrollo Web', 'Integración IA'],
     imageUrl: fer
   },
   { 
     name: 'Nacho Gentile', 
-    role: 'Project Manager',
-    expertise: ['Agile', 'Gestión de Equipo'],
+    role: 'Marketing',  
+    expertise: ['Marketing Digital'],
     imageUrl: nacho
   }
 ];
@@ -475,7 +476,7 @@ export const About: React.FC = () => {
             <p className="text-white text-xs text-center mb-2">
               {member.role}
             </p>
-            <div className="flex flex-wrap justify-center gap-1">
+            <div className="flex flex-wrap justify-center text-center gap-1">
               {member.expertise.map((skill, i) => (
                 <span
                   key={i}
@@ -509,7 +510,7 @@ export const About: React.FC = () => {
       <div className="max-w-[1900px] mx-auto">
         <div className="mt-25 flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-16">
           {/* Columna izquierda: Descripción */}
-          <div className="md:w-1/2 ml-15 mt-0">
+          <div className="md:w-1/2 ml-7 md:ml-15 mt-0">
             <div
               className="mb-4 lg:mt-15 sm:mb-8 md:mb-4 lg:ml-5 font-bold text-4xl sm:text-4xl md:text-5xl text-white lg:text-5xl md:text-start text-center"
               style={{
@@ -553,6 +554,7 @@ export const About: React.FC = () => {
           </div>
           
         </div>
+        <Carousel></Carousel>
       </div>
 
       <div className="absolute md:mt-17 mt-10 left-0 right-0 h-3 bg-gradient-to-t from-[#80A8D6] to-[#2b2b2c] opacity-100"></div>

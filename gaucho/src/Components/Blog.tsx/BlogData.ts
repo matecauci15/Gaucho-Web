@@ -1,4 +1,14 @@
 import { BlogPost } from './types';
+import robot from '../../assets/robot.jpeg';
+import compu from '../../assets/compu.jpeg';
+import compusola from '../../assets/compusola.jpeg';
+import python from '../../assets/python.jpeg';
+import python2 from '../../assets/python2.jpeg';
+import saludo from '../../assets/saludo.jpeg';
+import cod from '../../assets/cod.jpeg';
+import redbot from '../../assets/redbot.jpeg';
+
+
 
 export const blogPosts: BlogPost[] = [
   {
@@ -202,7 +212,7 @@ Las empresas están implementando soluciones blockchain para:
 
 Proyectamos que para finales de 2026, más del 35% de las empresas del Fortune 500 habrán implementado alguna solución basada en blockchain en sus operaciones core. El momento de prepararse es ahora.
     `,
-    image: "https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg",
+    image: robot,
     author: {
       initials: "LC",
       name: "Laura Castillo"
@@ -261,7 +271,7 @@ Las empresas que están obteniendo mayor valor no son necesariamente las que uti
 
 Para finales de 2025, estimamos que el 60% de las grandes empresas contarán con al menos un LLM personalizado para sus operaciones específicas, y el mercado de herramientas de personalización crecerá un 300%.
     `,
-    image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg",
+    image: redbot,
     author: {
       initials: "DP",
       name: "Daniel Pérez"
@@ -318,7 +328,7 @@ Las ventajas que están impulsando esta adopción acelerada incluyen:
 
 Para 2026, proyectamos que más del 75% de los datos industriales serán procesados en el edge antes de llegar a la nube, y el mercado de soluciones edge para industria crecerá a una tasa anual del 38%.
     `,
-    image: "https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg",
+    image: compu,
     author: {
       initials: "VM",
       name: "Valeria Moreno"
@@ -615,41 +625,6 @@ Este reconocimiento nos motiva a seguir invirtiendo en investigación y desarrol
     readTime: "7 min"
   },
   {
-    id: "Noticias-7",
-    category: "Noticias",
-    title: "Lanzamos GAUCHO Shield, nuestra nueva solución de ciberseguridad para PYMES",
-    summary: "Una herramienta simple pero poderosa para prevenir amenazas digitales en pequeñas empresas.",
-    content: `
-  # Lanzamos GAUCHO Shield, nuestra nueva solución de ciberseguridad para PYMES
-  
-  Sabemos que las pequeñas empresas también son blanco de ciberataques. Por eso lanzamos **GAUCHO Shield**, una suite de protección digital pensada especialmente para este segmento.
-  
-  ## ¿Qué incluye?
-  
-  - Firewall inteligente con IA
-  - Antivirus con detección de día cero
-  - Backup automático en la nube
-  - Análisis de vulnerabilidades mensuales
-  
-  ## ¿Por qué es importante?
-  
-  Según un informe de IBM (2024), el 43% de los ciberataques están dirigidos a pequeñas empresas, muchas de las cuales no sobreviven a una brecha importante.
-  
-  Con esta solución, buscamos empoderar a nuestros clientes con herramientas accesibles y efectivas.
-  
-  ## Disponibilidad
-  
-  GAUCHO Shield está disponible desde abril 2025 para clientes de Argentina, Uruguay y Chile.
-    `,
-    image: "https://images.pexels.com/photos/5380645/pexels-photo-5380645.jpeg",
-    author: {
-      initials: "MC",
-      name: "Mateo Caucino"
-    },
-    date: "3 abril 2025",
-    readTime: "9 min"
-  },
-  {
     id: "Tendencias-6",
     category: "Tendencias",
     title: "Google lanza Gemini 2: el modelo de IA más potente hasta la fecha",
@@ -671,7 +646,7 @@ Este reconocimiento nos motiva a seguir invirtiendo en investigación y desarrol
   
   Este avance reafirma que estamos en plena carrera por la supremacía de la IA general.
     `,
-    image: "https://images.pexels.com/photos/1181359/pexels-photo-1181359.jpeg",
+    image: python,
     author: {
       initials: "JL",
       name: "Julia López"
@@ -707,4 +682,257 @@ Este reconocimiento nos motiva a seguir invirtiendo en investigación y desarrol
     date: "26 marzo 2025",
     readTime: "8 min"
   },
+  {
+    id: "Noticias-4",
+    category: "Noticias",
+    title: "OpenAI lanza ChatGPT-4o: velocidad mejorada y entrada de voz en tiempo real",
+    summary: "OpenAI presentó su nuevo modelo GPT-4o, con mejoras notables en velocidad y procesamiento multimodal en tiempo real.",
+    content: `
+  # OpenAI lanza ChatGPT-4o: velocidad mejorada y entrada de voz en tiempo real
+  
+  El 13 de mayo de 2024, OpenAI anunció el lanzamiento de **ChatGPT-4o**, una evolución de su modelo GPT-4 con grandes mejoras en rendimiento y capacidades.
+  
+  ## ¿Qué ofrece GPT-4o?
+  
+  - Entrada **multimodal**: texto, imágenes, audio y video
+  - Procesamiento de voz en **tiempo real**, tipo conversación telefónica
+  - Latencia muy baja (300ms), ideal para asistentes conversacionales
+  
+  ## Accesibilidad
+  
+  Disponible gratuitamente para todos los usuarios de ChatGPT (versión gratuita y Plus).
+  
+  Esta innovación marca un avance clave hacia asistentes de IA más naturales, rápidos y contextuales.
+    `,
+    image: "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg",
+    author: { initials: "GC", name: "GAUCHO LAB" },
+    date: "13 mayo 2024",
+    readTime: "5 min"
+  },
+  {
+    id: "Noticias-5",
+    category: "Noticias",
+    title: "Google presenta Project Astra: el asistente del futuro potenciado por IA",
+    summary: "En el evento I/O 2024, Google reveló su nuevo agente inteligente, capaz de observar, recordar y razonar con el mundo real.",
+    content: `
+  # Google presenta Project Astra: el asistente del futuro potenciado por IA
+  
+  En la conferencia Google I/O 2024, la empresa presentó **Project Astra**, un nuevo agente de inteligencia artificial que integra visión, memoria y lenguaje para interactuar de manera fluida con el entorno.
+  
+  ## Capacidades destacadas
+  
+  - Reconocimiento visual en tiempo real
+  - Respuestas contextuales con referencia a objetos físicos
+  - Memoria persistente para recordar interacciones pasadas
+  
+  ## Aplicaciones
+  
+  Desde asistencia para personas no videntes hasta soporte técnico en tiempo real. Project Astra apunta a ser un verdadero "cerebro digital" portátil.
+  
+  El futuro de los asistentes inteligentes ya está en marcha.
+    `,
+    image: "https://images.pexels.com/photos/1149070/pexels-photo-1149070.jpeg",
+    author: { initials: "GC", name: "GAUCHO LAB" },
+    date: "14 mayo 2024",
+    readTime: "6 min"
+  },
+  {
+    id: "Noticias-6",
+    category: "Noticias",
+    title: "GAUCHO LAB: Seis meses de crecimiento, innovación y compromiso",
+    summary: "Desde Rosario al mundo: GAUCHO LAB cumple medio año de vida y ya dejó su huella en el ecosistema tecnológico.",
+    content: `
+  # GAUCHO LAB: Seis meses de crecimiento, innovación y compromiso
+  
+  En tan solo seis meses desde su creación, GAUCHO LAB se consolidó como un actor emergente en el mundo de las soluciones digitales. Con sede en Rosario, Santa Fe, esta joven empresa ya trabaja con clientes de distintos rubros, desarrollando herramientas a medida que mejoran la productividad y la comunicación de negocios de todos los tamaños.
+  
+  ## ¿Qué hicimos en este tiempo?
+  
+  - Lanzamos más de 10 proyectos en sectores como salud, retail y servicios financieros.
+  - Automatizamos flujos de trabajo con integraciones por WhatsApp, e-mail y redes sociales.
+  - Creamos nuestra primera app interna para gestión de datos vía Google Sheets + email.
+  
+  ## Nuestra sede en Rosario
+  
+  Ubicados en el corazón de Rosario, contamos con una oficina moderna que también funciona como espacio creativo para desarrolladores y diseñadores locales. Apostamos al talento joven de la ciudad y al trabajo colaborativo.
+  
+  ## Lo que se viene
+  
+  - Nuevas alianzas estratégicas con profesionales independientes y estudios contables.
+  - Plataforma para centralizar mensajes de redes sociales en un solo lugar.
+  - Expansión de nuestro equipo con perfiles técnicos y de producto.
+  
+  **GAUCHO LAB** sigue creciendo. Esto recién empieza.
+  
+    `,
+    image: "https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg",
+    author: { initials: "MC", name: "Mateo Caucino" },
+    date: "7 mayo 2025",
+    readTime: "7 min"
+  },
+  
+  {
+    id: "Tendencias-6",
+    category: "Tendencias",
+    title: "Uso de IA Generativa en atención al cliente: la nueva norma",
+    summary: "Empresas adoptan IA generativa como primer punto de contacto en soporte, ventas y onboarding.",
+    content: `
+  # Uso de IA Generativa en atención al cliente: la nueva norma
+  
+  Desde bancos hasta tiendas online, las empresas están utilizando modelos de lenguaje avanzados como GPT o Claude para:
+  
+  - Responder consultas frecuentes con precisión
+  - Realizar onboarding automatizado
+  - Generar emails de seguimiento y resúmenes de tickets
+  
+  Según Gartner, más del 70% de las interacciones con clientes serán automatizadas con IA para 2026. Esto no solo reduce costos, sino que mejora los tiempos de respuesta y la satisfacción general.
+    `,
+    image: saludo,
+    author: { initials: "GC", name: "GAUCHO LAB" },
+    date: "6 mayo 2025",
+    readTime: "5 min"
+  },
+  {
+    id: "Tendencias-7",
+    category: "Tendencias",
+    title: "La automatización low-code/no-code acelera la transformación digital",
+    summary: "Las herramientas low-code permiten a empresas desarrollar soluciones rápidas sin depender exclusivamente de equipos técnicos.",
+    content: `
+  # La automatización low-code/no-code acelera la transformación digital
+  
+  Plataformas como **Zapier**, **Make.com**, **Retool** o **Bubble** están permitiendo que más equipos de negocio puedan:
+  
+  - Construir dashboards personalizados
+  - Automatizar tareas repetitivas
+  - Integrar sistemas sin código tradicional
+  
+  Esto acelera la innovación y democratiza el desarrollo de software. El low-code no reemplaza a los desarrolladores, pero les permite enfocarse en tareas más complejas.
+    `,
+    image: compusola,
+    author: { initials: "GC", name: "GAUCHO LAB" },
+    date: "5 mayo 2025",
+    readTime: "6 min"
+  },
+  {
+    id: "Noticias-3",
+    category: "Noticias",
+    title: "Gaucho Lab lanza sistema de alertas inteligentes vía WhatsApp",
+    summary: "Nuestro equipo desarrolló una solución que automatiza el envío de notificaciones y alertas a través de WhatsApp, mejorando la eficiencia en atención al cliente.",
+    content: `
+  # Gaucho Lab lanza sistema de alertas inteligentes vía WhatsApp
+  
+  En línea con nuestra misión de optimizar la experiencia digital de nuestros clientes, Gaucho Lab ha desarrollado un nuevo sistema de alertas automatizadas utilizando la API de WhatsApp Business.
+  
+  ## ¿Qué permite?
+  
+  - Envío de notificaciones personalizadas según eventos definidos
+  - Seguimiento en tiempo real de interacciones
+  - Automatización de procesos como recordatorios, respuestas frecuentes, y alertas urgentes
+  
+  ## Integración simple
+  
+  Nuestra herramienta se integra con CRMs, sistemas de turnos y hojas de Google. Pensada para profesionales, pymes y empresas que necesitan mantener el contacto con sus clientes sin fricciones.
+  
+  ## Próximos pasos
+  
+  Ya estamos desarrollando nuevas funciones con IA para respuestas inteligentes, integración con Instagram y Facebook, y métricas avanzadas de engagement.
+  
+  ¡Seguimos construyendo soluciones a medida para el mundo real!
+    `,
+    image: "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg",
+    author: {
+      initials: "MF",
+      name: "María Fernández"
+    },
+    date: "8 abril 2025",
+    readTime: "6 min"
+  },
+  {
+    id: "Noticias-4",
+    category: "Noticias",
+    title: "Google presenta Gemini 1.5, la nueva era de los modelos de lenguaje",
+    summary: "El nuevo modelo de lenguaje de Google sorprende por su capacidad para procesar hasta un millón de tokens de contexto.",
+    content: `
+  # Google presenta Gemini 1.5
+  
+  Durante febrero 2025, Google anunció la llegada de **Gemini 1.5**, una evolución de su modelo de lenguaje que permite trabajar con contextos extremadamente largos (¡hasta un millón de tokens!).
+  
+  ## ¿Qué significa esto?
+  
+  - Procesar libros completos, líneas de código, contratos extensos sin perder contexto
+  - Crear asistentes inteligentes que comprendan documentación compleja
+  
+  ## Aplicaciones
+  
+  Ideal para sectores legales, desarrollo de software y asistencia virtual avanzada. Se espera que revolucione la forma en que las empresas implementan IA.
+  
+  `,
+    image: "https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg",
+    author: {
+      initials: "GL",
+      name: "Gabriela López"
+    },
+    date: "25 febrero 2025",
+    readTime: "5 min"
+  },
+  {
+    id: "Tendencias-6",
+    category: "Tendencias",
+    title: "El auge del Passkey: ¿adiós a las contraseñas?",
+    summary: "Empresas como Google y Apple impulsan el uso de Passkeys como alternativa segura y sin fricción a las contraseñas tradicionales.",
+    content: `
+  # El auge del Passkey
+  
+  En 2025, gigantes como Google, Apple y Microsoft están acelerando la adopción de Passkeys, claves criptográficas que reemplazan contraseñas.
+  
+  ## Ventajas
+  
+  - No se pueden filtrar ni reutilizar
+  - Funciona con reconocimiento biométrico
+  - Más seguras frente a phishing
+  
+  ## ¿Estamos listos?
+  
+  El ecosistema aún se está adaptando, pero los navegadores, apps y sistemas operativos ya comienzan a ofrecer soporte total.
+  
+  La seguridad sin contraseñas ya no es un futuro: es una realidad en expansión.
+    `,
+    image: cod,
+    author: {
+      initials: "AR",
+      name: "Ana Rodríguez"
+    },
+    date: "30 marzo 2025",
+    readTime: "7 min"
+  },
+  {
+    id: "Tendencias-7",
+    category: "Tendencias",
+    title: "Boom de plataformas low-code: desarrollo más accesible",
+    summary: "Herramientas como Bubble, Make o Retool democratizan el desarrollo web y la automatización para usuarios sin experiencia técnica.",
+    content: `
+  # Boom de plataformas low-code
+  
+  El desarrollo ya no es solo para programadores. Plataformas como **Bubble, Make, Retool y Webflow** permiten crear apps, sistemas y automatizaciones sin escribir código.
+  
+  ## ¿Por qué están creciendo?
+  
+  - Reducción de costos y tiempo
+  - Accesibles para emprendedores o equipos de negocio
+  - Integración con APIs y sistemas existentes
+  
+  ## El futuro
+  
+  Cada vez más empresas usan estas soluciones para MVPs o automatización interna. El desafío está en combinar agilidad con escalabilidad y seguridad.
+    `,
+    image: python2,
+    author: {
+      initials: "JD",
+      name: "Juan Delgado"
+    },
+    date: "4 abril 2025",
+    readTime: "6 min"
+  }
+    
+    
 ]
