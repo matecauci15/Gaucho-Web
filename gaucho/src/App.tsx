@@ -108,6 +108,7 @@ import { MainPage } from './Pages/MainPage';
 import './index.css';
 import ScrollToTop  from './Components/ScrollToTop';
 import { TermsPage } from './Pages/TermsPage.tsx';
+import RegisterPage from './Pages/RegisterPage';
 
 function App() {
   return (
@@ -123,6 +124,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MainPage />} />
           {/* <Route path="/blog/:id" element={<BlogDetail />} /> */}
+          <Route path="/register" element={<RegisterPage />} />
           <Route path="*" element={<MainPage />} /> {/* ← Añadí esta línea */}
           <Route path="/terms" element={<TermsPage />} /> {/* ← Añadí esta línea */}
         </Routes>
