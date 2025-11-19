@@ -1,11 +1,6 @@
-
-// import React, { useState, useEffect } from 'react';
+// // import React, { useState, useEffect } from 'react';
+// import React, { useState} from 'react';
 // import { Globe, Bot, MessageSquare, ChevronRight, ChevronLeft } from 'lucide-react';
-// import ofi from '../assets/ofi.png'
-// import manos from '../assets/manos.png'
-// import amc from '../assets/amc.png'
-// import lab from '../assets/lab.png'
-// import equipo from '../assets/equipo.png'
 
 
 // interface Proyecto {
@@ -23,19 +18,13 @@
 //   descripcion?: string;
 // }
 
-// interface Foto {
-//   id: number;
-//   alt: string;
-//   url: string;  // Esta sería una URL real en producción
-// }
-
 // const proyectos: Proyecto[] = [
 //   {
 //     id: 1,
 //     titulo: "Automatización por WhatsApp para Comercios",
 //     fecha: "2024",
 //     descripcion: "Pedidos, consultas y confirmaciones automatizadas. Reducción del 70% en tareas operativas repetitivas.",
-//     tecnologias: ["WhatsApp API", "Node.js", "Dialogflow"],
+//     tecnologias: ["WhatsApp API", "Node.js"],
 //     icono: <MessageSquare size={24} />
 //   },
 //   {
@@ -59,113 +48,43 @@
 // const pasos: Paso[] = [
 //   {
 //     numero: 1,
-//     titulo: "Reunión inicial:",
+//     titulo: "Reunión inicial",
 //     descripcion: "entendemos tu necesidad."
 //   },
 //   {
 //     numero: 2,
-//     titulo: "Diagnóstico y propuesta personalizada."
+//     titulo: "Diagnóstico y propuesta personalizada"
 //   },
 //   {
 //     numero: 3,
-//     titulo: "Desarrollo:",
+//     titulo: "Desarrollo de la propuesta y validaciones",
 //     descripcion: "fases, entregas y validaciones."
 //   },
 //   {
 //     numero: 4,
-//     titulo: "Entrega final y soporte continuo."
+//     titulo: "Entrega Final"
 //   },
 //   {
 //     numero: 5,
-//     titulo: "Actualizaciones mensuales",
-//     descripcion: "(opcional)."
-//   }
-// ];
-
-// // Fotos del equipo y la oficina para el carrusel
-// const fotos: Foto[] = [
-//   {
-//     id: 1,
-//     alt: "Equipo trabajando en la oficina",
-//     url: amc
-//   },
-//   {
-//     id: 2,
-//     alt: "Espacio de trabajo colaborativo",
-//     url: lab
-//   },
-//   {
-//     id: 3,
-//     alt: "Reunión de equipo",
-//     url: equipo
-//   },
-//   {
-//     id: 4,
-//     alt: "Área de descanso",
-//     url: manos
-//   },
-//   {
-//     id: 5,
-//     alt: "Estación de trabajo",
-//     url: ofi
+//     titulo: "Actualizaciones y mejora continua",  
 //   }
 // ];
 
 // export const ProjectsPage: React.FC = () => {
 //   const [activeTab, setActiveTab] = useState<'exitos' | 'proceso'>('exitos');
 //   const [activeProject, setActiveProject] = useState<Proyecto | null>(proyectos[0]);
-//   const [activePhotoIndex, setActivePhotoIndex] = useState(0);
-//   const [autoplay, setAutoplay] = useState(true);
-
-//   // Función para navegar al proyecto anterior
+  
 //   const goToPrevProject = () => {
 //     const currentIndex = proyectos.findIndex(p => p.id === activeProject?.id);
 //     const prevIndex = currentIndex > 0 ? currentIndex - 1 : proyectos.length - 1;
 //     setActiveProject(proyectos[prevIndex]);
 //   };
 
-//   // Función para navegar al proyecto siguiente
 //   const goToNextProject = () => {
 //     const currentIndex = proyectos.findIndex(p => p.id === activeProject?.id);
 //     const nextIndex = currentIndex < proyectos.length - 1 ? currentIndex + 1 : 0;
 //     setActiveProject(proyectos[nextIndex]);
 //   };
-
-//   // Funciones para el carrusel de fotos
-//   const goToPrevPhoto = () => {
-//     setActivePhotoIndex((prevIndex) => 
-//       prevIndex > 0 ? prevIndex - 1 : fotos.length - 1
-//     );
-//   };
-
-//   const goToNextPhoto = () => {
-//     setActivePhotoIndex((prevIndex) => 
-//       prevIndex < fotos.length - 1 ? prevIndex + 1 : 0
-//     );
-//   };
-
-//   const goToPhoto = (index: number) => {
-//     setActivePhotoIndex(index);
-//   };
-
-//   // Autoplay para el carrusel
-//   useEffect(() => {
-//     let interval: ReturnType<typeof setInterval>;
-    
-//     if (autoplay && activeTab === 'proceso') {
-//       interval = setInterval(() => {
-//         goToNextPhoto();
-//       }, 5000); // Cambiar foto cada 5 segundos
-//     }
-    
-//     return () => {
-//       if (interval) clearInterval(interval);
-//     };
-//   }, [autoplay, activePhotoIndex, activeTab]);
-
-//   // Pausar autoplay al hacer hover en el carrusel
-//   const handleMouseEnter = () => setAutoplay(false);
-//   const handleMouseLeave = () => setAutoplay(true);
 
   
 //   return (
@@ -175,11 +94,15 @@
 //         <div className="flex border-b border-gray-800 mb-8 md:mb-10 md:mt-10">
 //           <button
 //             onClick={() => setActiveTab("exitos")}
-//             className={`px-4 py-3 text-base sm:text-lg font-bold tracking-tight mr-6 transition-all font-[Montserrat] uppercase ${
-//               activeTab === "exitos"
-//                 ? "text-white border-b-2 border-[#F2BF5D] -mb-px"
-//                 : "text-gray-400 hover:text-gray-200"
-//             }`}
+//             className={`px-4 py-3 text-base sm:text-lg font-bold tracking-tight mr-6 transition-all  uppercase 
+//               ${
+//                 activeTab === "exitos"
+//                   ? "text-white border-b-2 border-[#F2BF5D] -mb-px"
+//                   : "text-gray-400 hover:text-gray-200"
+//               }`}
+//             style={{
+//               fontFamily: "'JetBrains Mono', monospace",
+//             }}
 //           >
 //             CASOS DE ÉXITO
 //           </button>
@@ -190,6 +113,9 @@
 //                 ? "text-white border-b-2 border-[#F2BF5D] -mb-px"
 //                 : "text-gray-400 hover:text-gray-200"
 //             }`}
+//             style={{
+//               fontFamily: "'JetBrains Mono', monospace",
+//             }}
 //           >
 //             NUESTRO PROCESO
 //           </button>
@@ -197,7 +123,12 @@
 
 //         {activeTab === "exitos" ? (
 //           <div>
-//             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 md:mb-10 text-white tracking-tight text-center md:text-start uppercase font-[Montserrat]">
+//             <h1
+//               className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 md:mb-10 text-white tracking-tight text-center md:text-start uppercase"
+//               style={{
+//                 fontFamily: "'JetBrains Mono', monospace",
+//               }}
+//             >
 //               CASOS DE ÉXITO
 //             </h1>
 
@@ -224,7 +155,14 @@
 //                       {proyecto.icono}
 //                     </div>
 //                     <div>
-//                       <p className="font-medium font-[Montserrat] uppercase">{proyecto.titulo}</p>
+//                       <p
+//                         className="font-medium uppercase text-lg"
+//                         style={{
+//                           fontFamily: "'JetBrains Mono', monospace",
+//                         }}
+//                       >
+//                         {proyecto.titulo}
+//                       </p>
 //                       {proyecto.fecha && (
 //                         <p
 //                           className={`text-sm font-[Montserrat] ${
@@ -242,7 +180,7 @@
 //               </div>
 
 //               {/* Detalle del proyecto activo para desktop */}
-//               <div className="md:col-span-2 bg-white rounded-lg p-6 md:p-8 border border-[#5b92c0] shadow-md">
+//               <div className="md:col-span-2 bg-white rounded-lg p-6 md:p-8 border border-[#73a9d8] shadow-md">
 //                 {activeProject && (
 //                   <div className="h-full flex flex-col">
 //                     <div className="flex items-center mb-6">
@@ -262,17 +200,19 @@
 //                     </div>
 
 //                     <div className="mb-6">
-//                       <h3 className="text-gray-800 text-lg mb-2 font-semibold font-[Montserrat] uppercase">
+//                       <h3 className="text-[#73a9d8] text-lg mb-2 font-semibold font-[Montserrat] uppercase">
 //                         Descripción
 //                       </h3>
-//                       <p className="text-gray-700 leading-relaxed font-[JetBrains Mono]">
+//                       <p className="text-gray-700 leading-relaxed font-[Montserrat]">
 //                         {activeProject.descripcion}
 //                       </p>
+
+//                       {/* Botón solo para el proyecto de WhatsApp */}
 //                     </div>
 
 //                     {activeProject.tecnologias && (
 //                       <div className="mt-auto">
-//                         <h3 className="text-gray-800 text-lg mb-2 font-semibold font-[Montserrat] uppercase">
+//                         <h3 className="text-[#73a9d8] text-lg mb-2 font-semibold font-[Montserrat] uppercase">
 //                           Tecnologías
 //                         </h3>
 //                         <div className="flex flex-wrap gap-2">
@@ -287,6 +227,18 @@
 //                         </div>
 //                       </div>
 //                     )}
+//                     {activeProject.id === 1 && (
+//                       <div className="mt-60 absolute right-50 ">
+//                         <a
+//                           href="https://dev.gauchoapp.gaucholab.com/login?from=%2F"
+//                           target="_blank"
+//                           rel="noopener noreferrer"
+//                           className="inline-block bg-[#F2BF5D] hover:bg-[#F8BC47] text-white font-bold py-2 px-6 rounded-lg transition-colors duration-300 font-[Montserrat] uppercase text-sm shadow-md hover:shadow-lg"
+//                         >
+//                           Ver Demo
+//                         </a>
+//                       </div>
+//                     )}
 //                   </div>
 //                 )}
 //               </div>
@@ -295,7 +247,7 @@
 //             {/* Vista para móvil - Sistema de cards navegables */}
 //             <div className="md:hidden">
 //               {activeProject && (
-//                 <div className="bg-white rounded-lg overflow-hidden border border-[#5b92c0] shadow-md">
+//                 <div className="bg-white rounded-lg overflow-hidden border border-[#73a9d8] shadow-md">
 //                   {/* Cabecera del proyecto */}
 //                   <div className="bg-[#73a9d8] p-4 flex items-center">
 //                     <div className="p-2 rounded-full bg-white/20 text-white mr-3">
@@ -316,17 +268,31 @@
 //                   {/* Contenido del proyecto */}
 //                   <div className="p-5">
 //                     <div className="mb-5">
-//                       <h3 className="text-gray-800 text-lg mb-2 font-semibold font-[Montserrat] uppercase">
+//                       <h3 className="text-[#73a9d8] text-lg mb-2 font-semibold font-[Montserrat] uppercase">
 //                         Descripción
 //                       </h3>
 //                       <p className="text-gray-700 font-[JetBrains Mono]">
 //                         {activeProject.descripcion}
 //                       </p>
+
+//                       {/* Botón solo para el proyecto de WhatsApp en móvil */}
+//                       {activeProject.id === 1 && (
+//                         <div className="mt-4">
+//                           <a
+//                             href="https://dev.gauchoapp.gaucholab.com/login?from=%2F"
+//                             target="_blank"
+//                             rel="noopener noreferrer"
+//                             className="inline-block bg-[#F2BF5D] hover:bg-[#F8BC47] text-white font-bold py-2 px-6 rounded-lg transition-colors duration-300 font-[Montserrat] uppercase text-sm shadow-md hover:shadow-lg"
+//                           >
+//                             Ver Demo
+//                           </a>
+//                         </div>
+//                       )}
 //                     </div>
 
 //                     {activeProject.tecnologias && (
 //                       <div>
-//                         <h3 className="text-gray-800 text-lg mb-2 font-semibold font-[Montserrat] uppercase">
+//                         <h3 className="text-[#73a9d8] text-lg mb-2 font-semibold font-[Montserrat] uppercase">
 //                           Tecnologías
 //                         </h3>
 //                         <div className="flex flex-wrap gap-2">
@@ -380,115 +346,73 @@
 //           </div>
 //         ) : (
 //           <div>
-//             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 md:mb-10 text-white tracking-tight text-center md:text-start ">
+//             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 md:mb-10 text-white tracking-tight text-center md:text-start">
 //               NUESTRO PROCESO DE TRABAJO
 //             </h1>
 
-//             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
-//               {/* Proceso con cajas numeradas */}
-//               <div className="flex flex-col space-y-8">
-//                 {pasos.map((paso) => (
+//             <div className="max-w-6xl mx-auto mt-20">
+//               {/* Fila superior - 3 pasos */}
+//               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12 mb-10 md:mb-16">
+//                 {pasos.slice(0, 3).map((paso) => (
 //                   <div
 //                     key={paso.numero}
-//                     className="flex items-center hover:transform hover:scale-[1.01] transition-transform duration-200"
+//                     className="flex flex-col items-center group hover:transform hover:scale-[1.02] transition-all duration-300"
 //                   >
-//                     {/* Contenedor de enumeración (caja numerada) */}
-//                     <div className="z-10 shrink-0">
-//                       <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center bg-white text-[#F2BF5D] text-xl md:text-3xl font-bold rounded-lg shadow-lg border-3  transition-colors duration-200 ">
+//                     {/* Contenedor principal con fondo sutil */}
+//                     <div className="relative h-32 content-center bg-[#73A9D8] backdrop-blur-sm border border-white/20 rounded-xl p-6 w-full text-center shadow-lg group-hover:bg-white group-hover:shadow-xl transition-all duration-300">
+//                       {/* Número en la parte superior */}
+//                       <div
+//                         className="absolute -top-8 left-1/2 transform -translate-x-1/2 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center bg-[#73A9D8] group-hover:bg-white group-hover:text-[#F2BF5D] group-hover:border-[#F2BF5D] text-white text-xl md:text-3xl  rounded-lg shadow-lg border-2 border-white group-hover:shadow-xl transition-shadow duration-300 z-10"
+//                         style={{ fontFamily: "'Montserrat', sans-serif" }}
+//                       >
 //                         {paso.numero}
 //                       </div>
-//                     </div>
 
-//                     {/* Contenedor de descripción (caja de contenido) */}
-//                     <div
-//                       className="bg-white text-xs border-[#73a9d8] md:text-lg rounded-lg py-4 px-5 ml-4 w-110 shadow-md flex items-center justify-center"
-//                       style={{ fontFamily: "'Montserrat', sans-serif" }}
-//                     >
-//                       <p className="font-medium">
-//                         {paso.titulo}
-//                         {paso.descripcion && (
-//                           <span className="font-normal">
-//                             {" "}
-//                             {paso.descripcion}
-//                           </span>
-//                         )}
-//                       </p>
+//                       {/* Contenido del paso */}
+//                       <div className="mt-4">
+//                         <h3 className="uppercase text-white font-bold text-base md:text-lg mb-3 group-hover:text-[#F2BF5D] transition-colors duration-300">
+//                           {paso.titulo}
+//                         </h3>
+//                       </div>
 //                     </div>
 //                   </div>
 //                 ))}
 //               </div>
 
-//               {/* Carrusel de fotos - Reemplaza la ilustración anterior */}
-//               <div
-//                 className="relative overflow-hidden rounded-lg"
-//                 onMouseEnter={handleMouseEnter}
-//                 onMouseLeave={handleMouseLeave}
-//               >
-//                 {/* Carrusel de imágenes */}
-//                 <div>
-//                   {/* Contenedor del carrusel con altura fija */}
-//                   <div className="relative h-64 mt-1 md:h-98 overflow-hidden rounded-lg">
-//                     {/* Imágenes del carrusel con transición suave */}
-//                     <div className="relative h-full w-full">
-//                       {fotos.map((foto, index) => (
-//                         <div
-//                           key={foto.id}
-//                           className={`absolute inset-0 transition-opacity duration-500 ${
-//                             index === activePhotoIndex
-//                               ? "opacity-100"
-//                               : "opacity-0"
-//                           }`}
-//                         >
-//                           <img
-//                             src={foto.url}
-//                             alt={foto.alt}
-//                             className="w-full h-full object-cover"
-//                           />
-//                         </div>
-//                       ))}
-//                     </div>
-
-//                     {/* Controles de navegación (ya no son necesarios aquí, los eliminamos) */}
-//                     {/* Los controles ahora están junto a los indicadores en el contenedor blanco */}
-//                   </div>
-
-//                   {/* Contenedor blanco separado para indicadores de posición */}
-//                   <div className="bg-white p-2 mt-2 rounded-lg">
-//                     <div className="flex justify-center items-center">
-//                       {/* Botón izquierdo */}
-//                       <button
-//                         onClick={goToPrevPhoto}
-//                         className="mx-2 text-gray-300 hover:text-[#F2BF5D] rounded-full p-1 transition-all"
-//                         aria-label="Foto anterior"
+//               {/* Fila inferior - 2 pasos centrados */}
+//               <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 md:gap-12 max-w-3xl mx-auto ">
+//                 {pasos.slice(3, 5).map((paso) => (
+//                   <div
+//                     key={paso.numero}
+//                     className="flex h-32 content-center flex-col items-center group hover:transform hover:scale-[1.02] transition-all duration-300"
+//                   >
+//                     {/* Contenedor principal con fondo sutil */}
+//                     <div className="relative h-32 content-center bg-[#73A9D8] backdrop-blur-sm border border-white/20 rounded-xl p-6 w-full text-center shadow-lg group-hover:bg-white group-hover:shadow-xl transition-all duration-300">
+//                       {/* Número en la parte superior */}
+//                       <div
+//                         className="absolute -top-8 left-1/2 transform -translate-x-1/2 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center bg-[#73A9D8] group-hover:bg-white group-hover:text-[#F2BF5D] group-hover:border-[#F2BF5D] text-white text-xl md:text-3xl  rounded-lg shadow-lg border-2 border-white group-hover:shadow-xl transition-shadow duration-300 z-10"
+//                         style={{ fontFamily: "'Montserrat', sans-serif" }}
 //                       >
-//                         <ChevronLeft size={20} />
-//                       </button>
+//                         {paso.numero}
+//                       </div>
 
-//                       {/* Indicadores */}
-//                       {fotos.map((foto, index) => (
-//                         <button
-//                           key={foto.id}
-//                           onClick={() => goToPhoto(index)}
-//                           className={`mx-1 w-2 h-2 rounded-full transition-all ${
-//                             index === activePhotoIndex
-//                               ? "bg-[#F2BF5D] w-6"
-//                               : "bg-gray-300 hover:bg-gray-400"
-//                           }`}
-//                           aria-label={`Ver foto ${foto.alt}`}
-//                         />
-//                       ))}
-
-//                       {/* Botón derecho */}
-//                       <button
-//                         onClick={goToNextPhoto}
-//                         className="mx-2 text-gray-300 hover:text-[#F2BF5D] rounded-full p-1 transition-all"
-//                         aria-label="Siguiente foto"
-//                       >
-//                         <ChevronRight size={20} />
-//                       </button>
+//                       {/* Contenido del paso */}
+//                       <div className="mt-6">
+//                         <h3 className="uppercase text-white font-bold text-base md:text-lg mb-3 group-hover:text-[#F2BF5D] transition-colors duration-300">
+//                           {paso.titulo}
+//                         </h3>
+//                         {paso.descripcion && (
+//                           <p
+//                             className="text-white/80 text-sm md:text-base leading-relaxed group-hover:text-white transition-colors duration-300"
+//                             style={{ fontFamily: "'Montserrat', sans-serif" }}
+//                           >
+//                             {paso.descripcion}
+//                           </p>
+//                         )}
+//                       </div>
 //                     </div>
 //                   </div>
-//                 </div>
+//                 ))}
 //               </div>
 //             </div>
 //           </div>
@@ -499,10 +423,23 @@
 // }
 
 
-// import React, { useState, useEffect } from 'react';
-import React, { useState} from 'react';
-import { Globe, Bot, MessageSquare, ChevronRight, ChevronLeft } from 'lucide-react';
+import React, { useState } from 'react';
+import { Globe, Bot, MessageSquare, ChevronRight, ChevronLeft, Play, ExternalLink } from 'lucide-react';
+import demo from '../assets/demo.mp4';
 
+interface Link {
+  url: string;
+  label: string;
+}
+
+interface Demo {
+  type: 'video' | 'link' | 'whatsapp' | 'links';
+  url?: string;
+  videoUrl?: string;
+  whatsappNumber?: string;
+  links?: Link[];
+  label?: string;
+}
 
 interface Proyecto {
   id: number;
@@ -511,30 +448,36 @@ interface Proyecto {
   descripcion: string;
   tecnologias?: string[];
   icono: React.ReactNode;
-}
-
-interface Paso {
-  numero: number;
-  titulo: string;
-  descripcion?: string;
+  demo?: Demo;
 }
 
 const proyectos: Proyecto[] = [
   {
     id: 1,
-    titulo: "Automatización por WhatsApp para Comercios",
+    titulo: "Automatización por WhatsApp y CRM para Comercios",
     fecha: "2024",
     descripcion: "Pedidos, consultas y confirmaciones automatizadas. Reducción del 70% en tareas operativas repetitivas.",
-    tecnologias: ["WhatsApp API", "Node.js", "Dialogflow"],
-    icono: <MessageSquare size={24} />
+    tecnologias: ["WhatsApp API", "Node.js"],
+    icono: <MessageSquare size={24} />,
+    demo: {
+      type: 'video',
+      videoUrl: demo,
+      label: 'Ver Demo en Video'
+    }
   },
   {
     id: 2,
     titulo: "Chatbot para Servicios Profesionales",
     fecha: "2024",
     descripcion: "Respuestas guiadas, derivación automática y toma de turnos. Atención fluida y sin fricciones.",
-    tecnologias: ["React", "OpenAI", "Calendly API"],
-    icono: <Bot size={24} />
+    tecnologias: ["React", "OpenAI"],
+    icono: <Bot size={24} />,
+    demo: {
+      type: 'whatsapp',
+      whatsappNumber: '5491157431471', // Reemplaza con tu número real
+      label: 'EBC Chatbot'
+    },
+    
   },
   {
     id: 3,
@@ -542,9 +485,26 @@ const proyectos: Proyecto[] = [
     fecha: "2023",
     descripcion: "Páginas institucionales y portfolios con integración a CRM, turnos y métricas.",
     tecnologias: ["Next.js", "Tailwind", "Vercel"],
-    icono: <Globe size={24} />
-  },
+    icono: <Globe size={24} />,
+    demo: {
+      type: 'links',
+      links: [
+        { url: 'https://amoseba.com.ar', label: 'Amoseba' },
+        { url: 'https://mgagroup.com.ar', label: 'MGA Group' },
+        { url: 'https://petitfinancieros.com.ar', label: 'Petit Financieros' },
+        { url: 'https://juegos.petitfinancieros.com.ar', label: 'Juegos' },
+        { url: 'https://cursos.petitfinancieros.com.ar', label: 'Cursos' },
+        { url: 'https://electrobatrosario.com', label: 'Electro Bato Rosario' }
+      ]
+    }
+  }
 ];
+
+interface Paso {
+  numero: number;
+  titulo: string;
+  descripcion?: string;
+}
 
 const pasos: Paso[] = [
   {
@@ -571,25 +531,95 @@ const pasos: Paso[] = [
   }
 ];
 
+// Componente para renderizar el demo según su tipo
+const DemoButton: React.FC<{ demo: Demo }> = ({ demo }) => {
+  const [showVideo, setShowVideo] = useState(false);
+
+  if (demo.type === 'video') {
+    return (
+      <>
+        <button
+          onClick={() => setShowVideo(true)}
+          className="inline-flex items-center gap-2 bg-[#F2BF5D] hover:bg-[#F8BC47] text-white font-bold py-2 px-6 rounded-lg transition-colors duration-300 font-[Montserrat] uppercase text-sm shadow-md hover:shadow-lg"
+        >
+          <Play size={16} /> {demo.label || 'Ver Demo'}
+        </button>
+
+        {showVideo && (
+          <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4" onClick={() => setShowVideo(false)}>
+            <div className="bg-black rounded-lg overflow-hidden max-w-3xl w-full" onClick={(e) => e.stopPropagation()}>
+              <div className="flex justify-between items-center p-4 border-b border-gray-700">
+                <h3 className="text-white font-bold">Demo en Video</h3>
+                <button onClick={() => setShowVideo(false)} className="text-gray-400 hover:text-white">✕</button>
+              </div>
+              <div className="aspect-video bg-black">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src={demo.videoUrl}
+                  title="Demo Video"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          </div>
+        )}
+      </>
+    );
+  }
+
+  if (demo.type === 'whatsapp') {
+    return (
+      <a
+        href={`https://wa.me/${demo.whatsappNumber}?text=Hola%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20este%20servicio`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20BA5A] text-white font-bold py-2 px-6 rounded-lg transition-colors duration-300 font-[Montserrat] uppercase text-sm shadow-md hover:shadow-lg"
+      >
+        <MessageSquare size={16} /> {demo.label || 'Chatear'}
+      </a>
+    );
+  }
+
+  if (demo.type === 'links') {
+    return (
+      <div className="flex flex-wrap gap-2">
+        {demo.links?.map((link, i) => (
+          <a
+            key={i}
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 bg-[#F2BF5D] hover:bg-[#F8BC47] text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 font-[Montserrat] text-sm shadow-md hover:shadow-lg"
+          >
+            {link.label} <ExternalLink size={14} />
+          </a>
+        ))}
+      </div>
+    );
+  }
+
+  return null;
+};
+
 export const ProjectsPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'exitos' | 'proceso'>('exitos');
   const [activeProject, setActiveProject] = useState<Proyecto | null>(proyectos[0]);
   
-  // Función para navegar al proyecto anterior
   const goToPrevProject = () => {
     const currentIndex = proyectos.findIndex(p => p.id === activeProject?.id);
     const prevIndex = currentIndex > 0 ? currentIndex - 1 : proyectos.length - 1;
     setActiveProject(proyectos[prevIndex]);
   };
 
-  // Función para navegar al proyecto siguiente
   const goToNextProject = () => {
     const currentIndex = proyectos.findIndex(p => p.id === activeProject?.id);
     const nextIndex = currentIndex < proyectos.length - 1 ? currentIndex + 1 : 0;
     setActiveProject(proyectos[nextIndex]);
   };
 
-  
   return (
     <div className="min-h-screen bg-[#2b2b2c] py-16 px-4 sm:px-6 md:px-8">
       <div className="max-w-6xl mx-auto">
@@ -597,28 +627,23 @@ export const ProjectsPage: React.FC = () => {
         <div className="flex border-b border-gray-800 mb-8 md:mb-10 md:mt-10">
           <button
             onClick={() => setActiveTab("exitos")}
-            className={`px-4 py-3 text-base sm:text-lg font-bold tracking-tight mr-6 transition-all  uppercase 
-              ${
-                activeTab === "exitos"
-                  ? "text-white border-b-2 border-[#F2BF5D] -mb-px"
-                  : "text-gray-400 hover:text-gray-200"
-              }`}
-            style={{
-              fontFamily: "'JetBrains Mono', monospace",
-            }}
+            className={`px-4 py-3 text-base sm:text-lg font-bold tracking-tight mr-6 transition-all uppercase ${
+              activeTab === "exitos"
+                ? "text-white border-b-2 border-[#F2BF5D] -mb-px"
+                : "text-gray-400 hover:text-gray-200"
+            }`}
+            style={{ fontFamily: "'JetBrains Mono', monospace" }}
           >
             CASOS DE ÉXITO
           </button>
           <button
             onClick={() => setActiveTab("proceso")}
-            className={`px-4 py-3 text-base sm:text-lg font-bold tracking-tight transition-all font-[Montserrat] uppercase ${
+            className={`px-4 py-3 text-base sm:text-lg font-bold tracking-tight transition-all uppercase ${
               activeTab === "proceso"
                 ? "text-white border-b-2 border-[#F2BF5D] -mb-px"
                 : "text-gray-400 hover:text-gray-200"
             }`}
-            style={{
-              fontFamily: "'JetBrains Mono', monospace",
-            }}
+            style={{ fontFamily: "'JetBrains Mono', monospace" }}
           >
             NUESTRO PROCESO
           </button>
@@ -628,9 +653,7 @@ export const ProjectsPage: React.FC = () => {
           <div>
             <h1
               className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 md:mb-10 text-white tracking-tight text-center md:text-start uppercase"
-              style={{
-                fontFamily: "'JetBrains Mono', monospace",
-              }}
+              style={{ fontFamily: "'JetBrains Mono', monospace" }}
             >
               CASOS DE ÉXITO
             </h1>
@@ -660,9 +683,7 @@ export const ProjectsPage: React.FC = () => {
                     <div>
                       <p
                         className="font-medium uppercase text-lg"
-                        style={{
-                          fontFamily: "'JetBrains Mono', monospace",
-                        }}
+                        style={{ fontFamily: "'JetBrains Mono', monospace" }}
                       >
                         {proyecto.titulo}
                       </p>
@@ -709,13 +730,10 @@ export const ProjectsPage: React.FC = () => {
                       <p className="text-gray-700 leading-relaxed font-[Montserrat]">
                         {activeProject.descripcion}
                       </p>
-                      
-                      {/* Botón solo para el proyecto de WhatsApp */}
-
                     </div>
 
                     {activeProject.tecnologias && (
-                      <div className="mt-auto">
+                      <div className="mb-6">
                         <h3 className="text-[#73a9d8] text-lg mb-2 font-semibold font-[Montserrat] uppercase">
                           Tecnologías
                         </h3>
@@ -731,24 +749,18 @@ export const ProjectsPage: React.FC = () => {
                         </div>
                       </div>
                     )}
-                                          {activeProject.id === 1 && (
-                        <div className="mt-60 absolute right-50 ">
-                          <a
-                            href="https://dev.gauchoapp.gaucholab.com/login?from=%2F"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-block bg-[#F2BF5D] hover:bg-[#F8BC47] text-white font-bold py-2 px-6 rounded-lg transition-colors duration-300 font-[Montserrat] uppercase text-sm shadow-md hover:shadow-lg"
-                          >
-                            Ver Demo
-                          </a>
-                        </div>
-                      )}
+
+                    {activeProject.demo && (
+                      <div className="mt-auto pt-6 border-t border-gray-200">
+                        <h3 className="text-[#73a9d8] text-lg mb-3 font-semibold font-[Montserrat] uppercase">
+                          Acceso
+                        </h3>
+                        <DemoButton demo={activeProject.demo} />
+                      </div>
+                    )}
                   </div>
-                  
                 )}
-                
               </div>
-              
             </div>
 
             {/* Vista para móvil - Sistema de cards navegables */}
@@ -781,24 +793,10 @@ export const ProjectsPage: React.FC = () => {
                       <p className="text-gray-700 font-[JetBrains Mono]">
                         {activeProject.descripcion}
                       </p>
-                      
-                      {/* Botón solo para el proyecto de WhatsApp en móvil */}
-                      {activeProject.id === 1 && (
-                        <div className="mt-4">
-                          <a
-                            href="https://dev.gauchoapp.gaucholab.com/login?from=%2F"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-block bg-[#F2BF5D] hover:bg-[#F8BC47] text-white font-bold py-2 px-6 rounded-lg transition-colors duration-300 font-[Montserrat] uppercase text-sm shadow-md hover:shadow-lg"
-                          >
-                            Ver Demo
-                          </a>
-                        </div>
-                      )}
                     </div>
 
                     {activeProject.tecnologias && (
-                      <div>
+                      <div className="mb-5">
                         <h3 className="text-[#73a9d8] text-lg mb-2 font-semibold font-[Montserrat] uppercase">
                           Tecnologías
                         </h3>
@@ -812,6 +810,15 @@ export const ProjectsPage: React.FC = () => {
                             </span>
                           ))}
                         </div>
+                      </div>
+                    )}
+
+                    {activeProject.demo && (
+                      <div className="py-4 border-t border-gray-200 mt-5">
+                        <h3 className="text-[#73a9d8] text-lg mb-3 font-semibold font-[Montserrat] uppercase">
+                          Acceso
+                        </h3>
+                        <DemoButton demo={activeProject.demo} />
                       </div>
                     )}
                   </div>
@@ -853,7 +860,8 @@ export const ProjectsPage: React.FC = () => {
           </div>
         ) : (
           <div>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 md:mb-10 text-white tracking-tight text-center md:text-start">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 md:mb-10 text-white tracking-tight text-center md:text-start uppercase"
+              style={{ fontFamily: "'JetBrains Mono', monospace" }}>
               NUESTRO PROCESO DE TRABAJO
             </h1>
 
@@ -865,22 +873,18 @@ export const ProjectsPage: React.FC = () => {
                     key={paso.numero}
                     className="flex flex-col items-center group hover:transform hover:scale-[1.02] transition-all duration-300"
                   >
-                    {/* Contenedor principal con fondo sutil */}
                     <div className="relative h-32 content-center bg-[#73A9D8] backdrop-blur-sm border border-white/20 rounded-xl p-6 w-full text-center shadow-lg group-hover:bg-white group-hover:shadow-xl transition-all duration-300">
-                      {/* Número en la parte superior */}
                       <div
-                        className="absolute -top-8 left-1/2 transform -translate-x-1/2 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center bg-[#73A9D8] group-hover:bg-white group-hover:text-[#F2BF5D] group-hover:border-[#F2BF5D] text-white text-xl md:text-3xl  rounded-lg shadow-lg border-2 border-white group-hover:shadow-xl transition-shadow duration-300 z-10"
+                        className="absolute -top-8 left-1/2 transform -translate-x-1/2 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center bg-[#73A9D8] group-hover:bg-white group-hover:text-[#F2BF5D] group-hover:border-[#F2BF5D] text-white text-xl md:text-3xl rounded-lg shadow-lg border-2 border-white group-hover:shadow-xl transition-shadow duration-300 z-10"
                         style={{ fontFamily: "'Montserrat', sans-serif" }}
                       >
                         {paso.numero}
                       </div>
 
-                      {/* Contenido del paso */}
                       <div className="mt-4">
                         <h3 className="uppercase text-white font-bold text-base md:text-lg mb-3 group-hover:text-[#F2BF5D] transition-colors duration-300">
                           {paso.titulo}
                         </h3>
-
                       </div>
                     </div>
                   </div>
@@ -888,23 +892,20 @@ export const ProjectsPage: React.FC = () => {
               </div>
 
               {/* Fila inferior - 2 pasos centrados */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 md:gap-12 max-w-3xl mx-auto ">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 md:gap-12 max-w-3xl mx-auto">
                 {pasos.slice(3, 5).map((paso) => (
                   <div
                     key={paso.numero}
                     className="flex h-32 content-center flex-col items-center group hover:transform hover:scale-[1.02] transition-all duration-300"
                   >
-                    {/* Contenedor principal con fondo sutil */}
                     <div className="relative h-32 content-center bg-[#73A9D8] backdrop-blur-sm border border-white/20 rounded-xl p-6 w-full text-center shadow-lg group-hover:bg-white group-hover:shadow-xl transition-all duration-300">
-                      {/* Número en la parte superior */}
                       <div
-                        className="absolute -top-8 left-1/2 transform -translate-x-1/2 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center bg-[#73A9D8] group-hover:bg-white group-hover:text-[#F2BF5D] group-hover:border-[#F2BF5D] text-white text-xl md:text-3xl  rounded-lg shadow-lg border-2 border-white group-hover:shadow-xl transition-shadow duration-300 z-10"
+                        className="absolute -top-8 left-1/2 transform -translate-x-1/2 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center bg-[#73A9D8] group-hover:bg-white group-hover:text-[#F2BF5D] group-hover:border-[#F2BF5D] text-white text-xl md:text-3xl rounded-lg shadow-lg border-2 border-white group-hover:shadow-xl transition-shadow duration-300 z-10"
                         style={{ fontFamily: "'Montserrat', sans-serif" }}
                       >
                         {paso.numero}
                       </div>
 
-                      {/* Contenido del paso */}
                       <div className="mt-6">
                         <h3 className="uppercase text-white font-bold text-base md:text-lg mb-3 group-hover:text-[#F2BF5D] transition-colors duration-300">
                           {paso.titulo}
@@ -928,142 +929,4 @@ export const ProjectsPage: React.FC = () => {
       </div>
     </div>
   );
-}
-
-//! SECCIÓN ANTERIOR NUESTRO PROCESO DE TRABAJO (COMENTADA) - PARA REFERENCIA
-
-//  <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 md:mb-10 text-white tracking-tight text-center md:text-start ">
-//               NUESTRO PROCESO DE TRABAJO
-//             </h1>
-
-// <div className="grid grid-cols-2 md:grid-cols-2 gap-12 md:gap-16 max-w-6xl mx-auto mt-20">
-//               {/* Columna izquierda - 3 pasos */}
-//               <div className="flex flex-col space-y-8 md:space-y-12">
-//                 {pasos.slice(0, 3).map((paso) => (
-//                   <div
-//                     key={paso.numero}
-//                     className="flex items-center hover:transform hover:scale-[1.01] transition-transform duration-200"
-//                   >
-//                     {/* Contenedor de enumeración (caja numerada) */}
-//                     <div className="z-10 shrink-0">
-//                       <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center bg-white text-[#F2BF5D] text-xl md:text-3xl font-bold rounded-lg shadow-lg border-3 transition-colors duration-200">
-//                         {paso.numero}
-//                       </div>
-//                     </div>
-
-//                     {/* Contenedor de descripción (caja de contenido) */}
-//                     <div
-//                       className="bg-white text-xs border-[#73a9d8] md:text-lg rounded-lg py-4 px-5 ml-4 shadow-md flex items-center justify-center flex-1"
-//                       style={{ fontFamily: "'Montserrat', sans-serif" }}
-//                     >
-//                       <p className="font-medium">
-//                         {paso.titulo}
-//                         {paso.descripcion && (
-//                           <span className="font-normal">
-//                             {" "}
-//                             {paso.descripcion}
-//                           </span>
-//                         )}
-//                       </p>
-//                     </div>
-//                   </div>
-//                 ))}
-//               </div>
-
-//               {/* Columna derecha - 2 pasos */}
-//               <div className="flex flex-col space-y-8 md:space-y-12 justify-center">
-//                 {pasos.slice(3, 5).map((paso) => (
-//                   <div
-//                     key={paso.numero}
-//                     className="flex items-center hover:transform hover:scale-[1.01] transition-transform duration-200"
-//                   >
-//                     {/* Contenedor de enumeración (caja numerada) */}
-//                     <div className="z-10 shrink-0">
-//                       <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center bg-white text-[#F2BF5D] text-xl md:text-3xl font-bold rounded-lg shadow-lg border-3 transition-colors duration-200">
-//                         {paso.numero}
-//                       </div>
-//                     </div>
-
-//                     {/* Contenedor de descripción (caja de contenido) */}
-//                     <div
-//                       className="bg-white text-xs border-[#73a9d8] md:text-lg rounded-lg py-4 px-5 ml-4 shadow-md flex items-center justify-center flex-1"
-//                       style={{ fontFamily: "'Montserrat', sans-serif" }}
-//                     >
-//                       <p className="font-medium">
-//                         {paso.titulo}
-//                         {paso.descripcion && (
-//                           <span className="font-normal">
-//                             {" "}
-//                             {paso.descripcion}
-//                           </span>
-//                         )}
-//                       </p>
-//                     </div>
-//                   </div>
-//                 ))}
-//               </div>
-
-
-//               {/* CARRUSEL: Carrusel de fotos - Reemplaza la ilustración anterior */}
-//               {/* <div
-//                 className="relative overflow-hidden rounded-lg"
-//                 onMouseEnter={handleMouseEnter}
-//                 onMouseLeave={handleMouseLeave}
-//               >
-//                 <div>
-//                   <div className="relative h-64 mt-1 md:h-98 overflow-hidden rounded-lg">
-//                     <div className="relative h-full w-full">
-//                       {fotos.map((foto, index) => (
-//                         <div
-//                           key={foto.id}
-//                           className={`absolute inset-0 transition-opacity duration-500 ${
-//                             index === activePhotoIndex
-//                               ? "opacity-100"
-//                               : "opacity-0"
-//                           }`}
-//                         >
-//                           <img
-//                             src={foto.url}
-//                             alt={foto.alt}
-//                             className="w-full h-full object-cover"
-//                           />
-//                         </div>
-//                       ))}
-//                     </div>
-//                   </div>
-
-//                   <div className="bg-white p-2 mt-2 rounded-lg">
-//                     <div className="flex justify-center items-center">
-//                       <button
-//                         onClick={goToPrevPhoto}
-//                         className="mx-2 text-gray-300 hover:text-[#F2BF5D] rounded-full p-1 transition-all"
-//                         aria-label="Foto anterior"
-//                       >
-//                         <ChevronLeft size={20} />
-//                       </button>
-
-//                       {fotos.map((foto, index) => (
-//                         <button
-//                           key={foto.id}
-//                           onClick={() => goToPhoto(index)}
-//                           className={`mx-1 w-2 h-2 rounded-full transition-all ${
-//                             index === activePhotoIndex
-//                               ? "bg-[#F2BF5D] w-6"
-//                               : "bg-gray-300 hover:bg-gray-400"
-//                           }`}
-//                           aria-label={`Ver foto ${foto.alt}`}
-//                         />
-//                       ))}
-
-//                       <button
-//                         onClick={goToNextPhoto}
-//                         className="mx-2 text-gray-300 hover:text-[#F2BF5D] rounded-full p-1 transition-all"
-//                         aria-label="Siguiente foto"
-//                       >
-//                         <ChevronRight size={20} />
-//                       </button>
-//                     </div>
-//                   </div>
-//                 </div>
-//               </div> */}
-//             </div>
+};
